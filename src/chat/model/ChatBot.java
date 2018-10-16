@@ -12,16 +12,16 @@ public class ChatBot
     private String content ;
     private ArrayList<String> spookyList ;
     
-    public ChatBot (ArrayList<String> responseList, String currentUser, String joke, String content, ArrayList<String> spookyList)
-    {
-    	this.responseList = responseList;
-    	this.currentUser = currentUser;
-    	this.joke = joke;
-    	this.content = content;
-    	this.spookyList = spookyList;
- 
- 
-    }
+//    public ChatBot ()
+//    {
+//    	this.responseList = responseList;
+//    	this.currentUser = currentUser;
+//    	this.joke = joke;
+//    	this.content = content;
+//    	this.spookyList = spookyList;
+// 
+// 
+//    }
     public String askName()
     {
     
@@ -75,6 +75,15 @@ public class ChatBot
    {
 	   this.spookyList=spookyList;
 	   
+   }
+   public ChatBot()
+   {
+	   this.joke = "why cant dinosuars drive? they are all dead";
+	   this.currentUser = new String("Default");
+	   this.content = new String("notin");
+	   
+	   this.responseList = new ArrayList<String>();
+	   this.spookyList = new ArrayList<String>();
    }
 }
 
