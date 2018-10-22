@@ -1,10 +1,10 @@
 package chat.controller;
 import javax.swing.JOptionPane;
 
-import chat.model.ChatBot;
+import chat.model.Chatbot;
 public class ChatController
 {//Data Members
-	private ChatBot simpleBot;
+	private Chatbot simpleBot;
 
 	
 	public void start ()
@@ -24,8 +24,20 @@ public class ChatController
 	}
 	public ChatController()
 	{
-		simpleBot = new ChatBot();
+		simpleBot = new Chatbot(null);
 		
+	}
+//	public Boolean useChatbotCheckers(){
+//		return true;
+//	}
+	
+	public String useChatbotCheckers(String chatCheckers)
+	{
+		
+		return null;
+	}
+	public String getChatbot() {
+		return "fug";
 	}
 
 }
