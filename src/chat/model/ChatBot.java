@@ -25,10 +25,7 @@ public class Chatbot
    
     //Getters
     
-   public ArrayList<String> getResponseList() 
-   {
-	   return responseList;
-   }
+   
    public String getCurrentUser()
    {
 	   return currentUser;
@@ -71,7 +68,7 @@ public class Chatbot
 	   this.spookyList=spookyList;
 	   
    }
-   public Chatbot (String string)
+   public Chatbot ()
    {
 	   this.joke = "why cant dinosuars drive? they are all dead";
 	   this.currentUser = new String("Default");
@@ -80,10 +77,14 @@ public class Chatbot
 	   this.responseList = new ArrayList<String>();
 	   this.spookyList = new ArrayList<String>();
 	   
-	   buildTheLists();
 	   
+	   buildTheLists();
    }
-   
+   public Chatbot(String String)
+{
+	
+}
+
    private void buildTheLists()
    {
 	   responseList.add("Hello");
@@ -111,7 +112,10 @@ public class Chatbot
 	   
 	   
    }
-   
+   public ArrayList<String> getResponseList() 
+   {
+	   return responseList;
+   }
    public String processText(String userText)
    {
 	   String output = "";
@@ -125,10 +129,28 @@ public boolean spookyChecker(String Checker)
 	// TODO Auto-generated method stub
 	return false;
 }
-public boolean legitimacyChecker(Object object)
+public boolean legitimacyChecker(String input)
 {
-	// TODO Auto-generated method stub
-	return false;
+	Boolean isValid = false;
+	if (input == null)
+	{
+		isValid = false;
+	}
+	else if (input.equals(""))
+	{
+		isValid = false;
+	}
+	else if (input.equals("asdfghjkl"))
+	{
+		isValid = false;
+	}
+	else if (input.length() > 1) 
+	{
+		isValid = true;
+	}
+	
+	
+	return isValid;
 }
 public boolean contentChecker(String content2)
 {
