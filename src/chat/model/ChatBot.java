@@ -6,7 +6,8 @@ import javax.swing.JOptionPane;
 
 public class Chatbot 
 { //Data Members
-    private ArrayList<String> responseList ;
+    private static final String String = null;
+	private ArrayList<String> responseList ;
     private String currentUser ;
     private String joke ;
     private String content ;
@@ -149,11 +150,13 @@ public class Chatbot
    {
 	   return responseList;
    }
-   public String processText(String userText)
+   public String processText(String userText )
    {
-	   String output = ("you said: " + userText);
+	   String output = ( "You said: \" " + userText + "\"" + "Chatbot says: \"" + content + "\"");
 	   
-	   
+	  if (contentChecker(content)) {
+		  output = ("You said: \" " + userText + "\"" + "Chatbot says: \"" + content + "\"" + "You said the special words");
+	  }
 	   return output;
    }
 public boolean spookyChecker(String phrase)
@@ -217,6 +220,11 @@ public boolean contentChecker(String userinput)
     {
     	fug = false;
     }
+    if (userinput.contains("You said the special words") )
+    {
+    	fug = true;
+    }
+    
    
 	return fug ;
 }
