@@ -10,7 +10,7 @@ public class ChatController
 	public void start ()
 	{
 		String userText = "nothingNow";
-		while(!userText.equalsIgnoreCase("quit")) {
+		while(!userText.contains("quit")) {
 			//simpleBot.setCurrentUser();  
 			userText = interactWithChatbot(userText);
 		}
@@ -20,6 +20,9 @@ public class ChatController
 		
 		String userText = JOptionPane.showInputDialog(null, "yo what do you want?");
 		String chatBotSays = simpleBot.processText(userText);
+		if (text == null) {
+			chatBotSays = "null";
+		}
 		return chatBotSays;
 	}
 	public ChatController()
@@ -32,9 +35,15 @@ public class ChatController
 //	}
 	
 	public String useChatbotCheckers(String chatCheckers)
-	{
+	{  
+		String var = "fug";
+		if (chatCheckers.equals("spooky")) 
+		{
+			var += "Halloween";
+		}
+			
 		
-		return null;
+		return var;
 	}
 	public String getChatbot() {
 		return "fug";

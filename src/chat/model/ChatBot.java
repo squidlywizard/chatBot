@@ -106,6 +106,7 @@ public class Chatbot
 	   responseList.add("may I remind you that I dont exsist");
 	   
 	   
+	   spookyList.add("Halloween");
 	   spookyList.add("Halloween is the worst holliday " );
 	   spookyList.add("*rattles quietly");
 	   spookyList.add("rattle me bones take what you will but dont rattle me bones");
@@ -155,7 +156,7 @@ public class Chatbot
 	   String output = ( "You said: \" " + userText + "\"" + "Chatbot says: \"" + content + "\"");
 	   
 	  if (contentChecker(content)) {
-		  output = ("You said: \" " + userText + "\"" + "Chatbot says: \"" + content + "\"" + "You said the special words");
+		  output += ("You said the special words.\n");
 	  }
 	   return output;
    }
@@ -165,6 +166,9 @@ public boolean spookyChecker(String phrase)
 	if (phrase.equals("Halloween"))
 		{ ifSpooky = true;
 		}
+	else if(phrase.equals("spooky")){
+		
+	}
 	else if (phrase.equals("Easter"))
 	{
 		ifSpooky = false;
@@ -206,23 +210,24 @@ public boolean legitimacyChecker(String input)
 	return isValid;
 }
 public boolean contentChecker(String userinput)
-{
-    Boolean fug = true;
-    if (userinput.equals("text" + content + "text"))
+{   
+    Boolean fug = false;
+    if (userinput.contains(content))
     {
-    	fug = false;
-    }
-    if (userinput.equals("text" + content ))
-    {
-    	fug = false;
-    }
-    if (userinput.equals( content + "text"))
-    {
-    	fug = false;
-    }
-    if (userinput.contains("You said the special words") )
-    {
-    	fug = true;
+    	
+    	if (userinput.length() == content.length()) {
+    		fug = true;
+    	}
+    	 
+//    }
+//    else if (userinput.equals("text" + content ))
+//    {
+//    	fug = false;
+//    }
+//    else if (userinput.equals( content + "text"))
+//    {
+//    	fug = false;
+//    }
     }
     
    
