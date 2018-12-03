@@ -1,6 +1,13 @@
 package chat.view;
 
-public class ChatPanel
-{
+import javax.swing.*;
+import chat.controller.*;
 
+public class ChatPanel extends JPanel
+{
+public ChatPanel(ChatController appController) {
+	super();
+	
+	
+}
 }
