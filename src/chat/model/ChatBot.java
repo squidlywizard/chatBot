@@ -153,7 +153,8 @@ public class Chatbot
    }
    public String processText(String userText )
    {
-	   String output = ( "You said: \" " + userText + "\"" + "Chatbot says: \"" + content + "\"");
+	   String WhatTheChatBotSays = responseList.get((int)Math.random()*responseList.size());
+	   String output = ( "You said: \" " + userText + "\"" + "Chatbot says: \"" + WhatTheChatBotSays + "\"");
 	   
 	  if (contentChecker(content)) {
 		  output += ("You said the special words.\n");
