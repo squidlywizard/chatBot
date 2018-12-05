@@ -51,5 +51,10 @@ public class ChatController
 	public String getChatbot() {
 		return "fug";
 	}
+	public ChatFrame getChatFrame()
+	{
+		return appFrame;
+		
+	}
 
 }
