@@ -5,10 +5,12 @@ import java.awt.Dimension;
 
 import javax.swing.*;
 import chat.controller.*;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
 
 public class ChatPanel extends JPanel
 {
-	
+	private ChatController appController;
 	private JButton chatButton;
 	private JButton checkerButton;
 	private JButton loadButton;
@@ -107,6 +109,18 @@ public void setupLayout()
 }
 public void setupListeners()
 {
-	
+	chatButton.addActionListener(new ActionListener()
+			{
+		public void actionPerformed(ActionEvent click)
+		{
+			String userText = chatField.getText();
+			String response = "";
+			response = appController.interactWithChatbot(userText);
+			chatArea.append(response);
+            chatArea.setCaretPosition(chatArea.getDocument().getLength());
+            chatField.setText("");
+			
+		}
+			});
 }
 }
