@@ -152,14 +152,32 @@ public class Chatbot
 	   return responseList;
    }
    public String processText(String userText )
+   { String output = "";
+   if (!validityChecker(userText))
    {
-	   String WhatTheChatBotSays = responseList.get((int)Math.random()*responseList.size());
-	   String output = ( "You said: \" " + userText + "\"" + "Chatbot says: \"" + WhatTheChatBotSays + "\"");
-	   
-	  if (contentChecker(content)) {
+	   output += "you are mean and this is null";
+   }
+   else
+   {
+   
+	   if (contentChecker(content)) {
 		  output += ("You said the special words.\n");
 	  }
+	   String WhatTheChatBotSays = responseList.get((int)Math.random()*responseList.size());
+	    output = ( "You said: \" " + userText + "\"" + "Chatbot says: \"" + WhatTheChatBotSays + "\"\n");
+   }
+	 
 	   return output;
+   }
+   public boolean validityChecker(String text)
+   {
+	   boolean isValid = false;
+	   
+	   if (text!= null && text.length() > 3)
+	   {
+		   isValid = true;
+	   }
+	   return isValid;
    }
 public boolean spookyChecker(String phrase)
 {

@@ -11,21 +11,16 @@ public class ChatController
 	
 	public void start ()
 	{
-		String userText = "nothingNow";
-		while(!userText.contains("quit")) {
-			//simpleBot.setCurrentUser();  
-			userText = interactWithChatbot(userText);
-		}
+		
+		
 		
 	}
 	public String interactWithChatbot(String text) {
 		
-		String userText = JOptionPane.showInputDialog(null, "yo what do you want?");
-		String chatBotSays = simpleBot.processText(userText);
-		if (text == null) {
-			chatBotSays = "null";
-		}
-		return chatBotSays;
+		String output = "";
+		output += simpleBot.processText(text);
+		
+		return output;
 	}
 	public ChatController()
 	{
