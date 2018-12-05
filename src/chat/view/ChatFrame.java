@@ -23,7 +23,7 @@ public class ChatFrame extends JFrame
 	private void setupFrame()
 	{
 		this.setContentPane(appPanel);
-		this.setSize(1000, 500);
+		this.setSize(800, 600);
 		this.setTitle("clothes on back, shoes on my feet");
 		this.setResizable(false);
 		this.setVisible(true);
