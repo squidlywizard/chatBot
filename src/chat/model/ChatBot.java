@@ -4,15 +4,15 @@ import java.util.*;
 import javax.swing.JOptionPane;
 
 
-public class Chatbot 
+public class ChatBot 
 { //Data Members
     private static final String String = null;
-	private ArrayList<String> responseList ;
+    private ArrayList<String> responseList ;
     private String currentUser ;
     private String joke ;
     private String content ;
     private ArrayList<String> spookyList ;
-    
+
 //    public ChatBot ()
 //    {
 //    	this.responseList = responseList;
@@ -23,10 +23,10 @@ public class Chatbot
 // 
 // 
 //    }
-   
+//   
     //Getters
-    
-   
+
+
    public String getCurrentUser()
    {
 	   return currentUser;
@@ -47,44 +47,46 @@ public class Chatbot
    public void setResponseList(ArrayList<String> responseList)
    {
 	   this.responseList=responseList;
-	   
+
    }
    public void setCurrentUser(String currentUser)
    {
 	   this.currentUser=currentUser;
-	   
+
    }
    public void setJoke(String joke)
    {
 	   this.joke=joke;
-	   
+
    }
    public void setContent(String content)
    {
 	   this.content=content;
-	   
+
    }
    public void setSpookyList(ArrayList<String> spookyList)
    {
 	   this.spookyList=spookyList;
-	   
+
    }
-   public Chatbot ()
+   public ChatBot ()
    {
 	   this.joke = "why cant dinosuars drive? they are all dead";
 	   this.currentUser = new String("Default");
 	   this.content = new String("notin");
-	   
+
 	   this.responseList = new ArrayList<String>();
 	   this.spookyList = new ArrayList<String>();
-	   
+
+
 	   buildTheLists();
-	   
    }
-   public Chatbot(String sampleContent)
+   public ChatBot(String sampleContent)
 {
 	this.content = new String("sample content");
-	
+
+
+
 }
 
    private void buildTheLists()
@@ -105,8 +107,8 @@ public class Chatbot
 	   responseList.add("feeling lucky punk?");
 	   responseList.add("why?");
 	   responseList.add("may I remind you that I dont exsist");
-	   
-	   
+
+
 	   spookyList.add("Halloween");
 	   spookyList.add("Halloween is the worst holliday " );
 	   spookyList.add("*rattles quietly");
@@ -145,41 +147,22 @@ public class Chatbot
 	   spookyList.add("are we cool yet?");
 	   spookyList.add("Ḇ̷̡̡̡̨̨̡̢̨̡̡̡̧̧̧̛̛̛̛̛̛̛̛̛̛̛͉̪̲̜͓̘͍͚̱͖͔̥̩͎̯̯͔̝͈̰̘̲̻̘͎̗̺̦̜̠͇̲̰̦̠̦̱͇̺͇͎̰͔̖̙͔̗̬̼̩͖̭͍͖̰͙͕̜̹͎̤͚͕͉̫̞̱̞̜̘͇͍̦̭͚̗̞̭̦̹͈̣͉̖̳̭̖̱͔̰̥̲͍̦͎̮̙͚͚͍̠̫͉̦̪̯̫̬͍͙̝͇̰̟͓̙̦̬̰̯̜͙̬̼̰͍̜͇̲̠̺͈͖͍̙̲͙͍̻̻̙͓͔̺͑̓̆̾̉̍̌̇̓̎̈́̉͛̏̓̂̀́́͑̎̈́̽̆̀̈̒̈́̇̌̿̓̒̀̀̈́̄̒͛̎̿̎̽́͐̍̄̅̂̌͑͊͒͒̅͒̄̈́͑͑̀͆̅̑̎͑̀̓͑̀̉͋̉̀̀̾̅̒̈̏̽̀̇̄̐̅͑͆̀̈́̑̒͌̒̈́̈́̀͋̊̓̅͛̀̇̃̈́̀̏̑̉̀̉͐̊́̀̋̌͂̓̈́̈́́̂͂̊̈́̓̔͂̑̃̅̀̒͑̀̓̈́̀͛͗̉͊́́͗̿̔̈́̐̋͐̇͑͂̓̊̽̑͋͛̾̅̅̌̽͒̽̍̎́̔̿̈́́̂͌͌͌̉͗͛̇͗̐͊̀͒̊͒̿̓͋͛̃̈́̍́͗͒̃̑̈̿̐̒̈́̅̽̎̿̅̿̑́̔̂̈́̔̉̈́́́̎̒̐̇̊͑͋̇͒͒̔͛̿͒́͛͘̚͘͘̕͘̚̚̕͘̚͘̚͘̕͘͘̕̚͘̚͘͘͜͜͠͝͝͝͝͝͠͠͝͠͝͠͝͠͝͝͠͝͝͝͝͠ͅͅͅͅͅͅͅƠ̴̧̨̧̨̧̢̨̢̨̡̢̧̢̧̢̢̨̛̛̛̯̞͍̤͙͖̻̯̪̜̬̝̠͈̗͖̥͓͎͉̣͎̞͖̜̼̖̯͓͖̦̳̳͇͓̖̮̱͖̝̜̩̙̰̖̣̜̭̯̹̪̠̲̹̻̹̰̘̼͖̟͍̖̳̤͇̥͚̥̬͙͚̮̦̬̬͚̯̣̭̤͈͖̖̯̮̜̝͚̥̼̳̲̬͖͓͍͈͔̺̗̗̦̲̟̻͖̲̭͙̼̼̰̳̗͇̟͇͕̪̺̮͕͓̹͉̟̝̻̭͉̫̯̼͍̬̦̜̪̮̲̌͆̐̒̿̆̏̂̇͂̀̃̔͛̍̾̂̆̾̀̒͗́̃͆̊̈́̅͂͐̈́͌̋̄̀̔͛̆̄̔͂̀̐̽͌́͆̓̆̓̇͛͐̋͂͐͛̐̑̍͌͐̎͑̆́͐͌̅͌̈̽̎̅͛̆̿̍̌͛̈́̈́̈́̓͂́̇̓̽̓͗̋͋̅̽͆̓̊̿͆̽͐͋̏͒͒̽͆̂͛̇̈́̒͒͑͗̊̋̌̈̊́̾̑͋̆͋̈́̆̎̈́͗͐́́̃̓̅͑̿͑̈́̈́͋͋͑̀͗͊̽̊̉̃̎̈́͂͆͌̀͒̎̉͐̈́͌͐͛̃̑͋̃́̿̂̀̿̋̄̆̊͑͂͆̒̀̂̒̽̔̃̑̌̎̾̐͂̈͗̿̂̓͆́̓̀̍̅̅̑̂̽̔̃̅̈́͂̀̀̑̚͘̕͘͘̚̚͘͘̕͜͜͜͜͜͠͠͠͝͝͝͝͠͠͝͝͝͝͠ͅṊ̷̨̡̨̡̨̨̡̡̢̢̧̨̢̧̨̡̨̡̡̡̨̨̡̢̡̨̨̢̛̛̛̛̫͖̯͕̯̹̤̻͍̤̦̼̞͙̘̤̣̮̟̹̙̱̺͍̹̻͓̯̜̠̻̮̟͉̻̜͓͓̞̪̬͉͙̤̮̞̳̺͔̬̘͍̖͖̫̻̰̟̘͉͍̘̩͈̥͖̜̼͇̙̠̙͈̘͕̦͚̬̝̱̙͙͔͇̞̜̱͈̫͉̭̫͕̺͈̭̞͖̤̫̜̯̠̜͍̟̻̫̪͚̟̣̦͎̬̪͕̻̖͔͔͕͔̮͍͉͍̠͍̱̘̰̹̫̙͇̺̤͙̬̪͎̼̬̭̙͙̭̣̳̼͖̤̭͚̟̻̦̫̤̦̜̹̳̰̺͈̬̝̫̜͔̦̝̲͕̯̙̙̫̜̺͙͖̘̩̤͇̮̭̤̬̱͉̲͙͙̮̬̤̺̟̼̮̣̺͖͔͖͓͍̤̠͈̳̖̹̝̥̲̠̣̻̣̦̠̤͔̭̟͈̱̰͍͓̼͉̗͖͓̟̥̝͓̟͚̖̰̖̼̪͚͔͙̯̟̔̔͋̓̌̌͐͑͑̊̈́̇͌̾͆̇̐̐͒̑̂̂̈́̍͂̑̇̊̍́̀͌͛̌͌̂̓̓̓͊̿͌̐̑̂͛̈́̄̉͌̍͆̆̈́͑̎͊̋̅͋̃̊̍̽̒̆̊̒́͌̃̿͊̔́̈̊̓̄̉̎͊̓̈́̊̓̑̎͋̋̔̄̒͛̿̈̀̔̈́̓̎̿͋̐̀̑̊͊̅͆͂͊͛͊̅͐̔͑͊̓̑̔̈̊͋̈̎̓̌͂̽͊̎̏̉̓͛̓̅̒̔̀̑̓̋́̃̋̂̾̅̊͛̈͊̈́́͌̆̈́͑́̽̈́͐͛͆̿̒̆̓͒͋͐̒̔̂́́̍̓͐̀͑̔͒͆̔̇́͂͐̇̓͆̈̉̽̈̒̓̍͒͘̕̚̕̚̕͘͘̚͘̚͘͜͜͜͜͝͠͝͝͠͠͝͠͝͝͠͝͝͠͠͝͝͝ͅͅͅͅͅĘ̵̧̢̡̢̧̡̢̢̨̢̡̧̨̧̢̨̡̢̨̨̡̢̧̡̡̡̛̛̛̛̛̛̖̭͈̣̰͉͖͕̞̯̲͍̰̗̪̫̻͎̝͖͙͎̭̺̦̤͓͉̹͉̥̠̤̺̼̫͔̳̝͍̟̥̖̲̫̝̤̖̻͙̺̮̯̤̥̟̲̺͖̝̩̝̞̗͇̪̣̳͕͉̻̰̮̩͔̩̗͎͈̬͖̳̟̻̬͔̝̗̲͎̝͖̫͎̺͈͈͕̼̤͓̲̤͉̻̹̲̝̥̻̘̭̯̼̘͍͙̲͎̰̲̗͔̬̘̬̻͚̞̠͕̭̭̪̖̫̫̞̖̳̰̯̟͚̹̩̮̼̬̮̘͇̼̘̖̟̖̲͎̦̞̱͔̪̯̙͖̱͇̣̠̖͖̹̗̫̲̩̟̥̰͕̺͇͕̩̪̮̜̫͕̻̳̰̺͈̣͍̤̺̫̻͉̫͈̝̠̦̟͍̗͊̓̅͌͗̊̽̓̍̑̈̐́̇͌̍̎͋͐̄̈́͌̋͗̀͒̀͒̊͑͐́̎́̂̇̄̃͋̀̇̒̄̉̑͂̍͋̈́̇̿̀̎̉̀̓̍̎̌̏͐̑͛̓̍̏̌͗̔̆͋̃̆̋́̽̓̂̓̑̃͗͗̂̌̒̏͆͌̈́̍̑̌̇̈͌́͂͆̔̐͐͊̾̌̓̽̐̒̎́̑̃̉̑͆̈́̓̓͌̎̋̊̿͗̽̌͌͊̉̓͐́̀̽̓̈́̏̋̌̿̽̋̏͛̚͘͘̚͘͘̚͘̕̚͘͜͜͠͠͝͝͠͠͝͠͝͝͠͠͝ͅͅͅͅS̴̨̢̢̨̡̨̧̡̢̡̨̧̢̡̧̡̢̛̜̗̠̗͖̘̩̰̱̲̳̱̪͓͔̣̟̘̳̪̙̫̮̻̰̫͇͕̯͙̖̬͇̬̗̟̥̥͔̯̟̻͙͔̮͖̗͔̜̙͕̟̞̳͈̩͎̭͕͖̤̹͈͍̠̦̲̺͚̤͈͖̥͈̱̜̩̞̝̤̙̳̞̩̫̮̳̩̜̪̙͚͉̬̱͖̠̘̲̝̼̤͚͚͚̳̪̺̥̱͉͉͙̖̜̝̭̗̠̗̲͈̜̭̫̗̥̦̳͇̪̥̜͙̝̞̗͚͇̻̝͉͂͛͆͐̈͐͂̉̿͆̀̐͊̊̓̄̎̉͛̀̑̃̀̋̿̌̍̈̈́͋̂̈̓͐̈́̃͒̐̈́̑̀̆̓͑̐̏͐́͑̈́̀͐̄̔̐͑̈́͋̚̚̚͘͘͜͜͜͜͝͝͝͠͠ͅͅ");
 	   spookyList.add("see you in the skeleton war");
-	   
-	   
+
+
    }
    public ArrayList<String> getResponseList() 
    {
 	   return responseList;
    }
    public String processText(String userText )
-   { String output = "";
-   
-   if (!validityChecker(userText))
    {
-	   output += "you are mean and this is null";
-   }
-   else
-   {
-   
-	   if (contentChecker(content)) {
-		  output += ("You said the special words.\n");
-	  }
-	   String WhatTheChatBotSays = responseList.get((int)Math.random()*responseList.size());
-	    output = ( "You said: \" " + userText + "\"" + "Chatbot says: \"" + WhatTheChatBotSays + "\"\n");
-   }
-	 
+	   String WhatTheChatBotSays = responseList.get((int)(Math.random()*responseList.size()));
+	   String output = ( "You said: \" " + userText + "\" " + "Chatbot says: \" " + WhatTheChatBotSays + "\"\n");
+
+	 // if (contentChecker(content)) {
+	//	  output += ("You said the special words.\n");
+	 // }
 	   return output;
-   }
-   public boolean validityChecker(String text)
-   {
-	   boolean isValid = false;
-	   
-	   if (text!= null && text.length() > 3)
-	   {
-		   isValid = true;
-	   }
-	   return isValid;
    }
 public boolean spookyChecker(String phrase)
 {
@@ -188,7 +171,7 @@ public boolean spookyChecker(String phrase)
 		{ ifSpooky = true;
 		}
 	else if(phrase.equals("spooky")){
-		
+
 	}
 	else if (phrase.equals("Easter"))
 	{
@@ -201,8 +184,8 @@ public boolean spookyChecker(String phrase)
 			{
 			ifSpooky = true;
 			}
-			
-			
+
+
 		}
 	}
 	return ifSpooky;
@@ -226,8 +209,8 @@ public boolean legitimacyChecker(String input)
 	{
 		isValid = true;
 	}
-	
-	
+
+
 	return isValid;
 }
 public boolean contentChecker(String userinput)
@@ -235,11 +218,11 @@ public boolean contentChecker(String userinput)
     Boolean fug = false;
     if (userinput.contains(content))
     {
-    	
+
     	if (userinput.length() == content.length()) {
     		fug = true;
     	}
-    	 
+
 //    }
 //    else if (userinput.equals("text" + content ))
 //    {
@@ -250,11 +233,11 @@ public boolean contentChecker(String userinput)
 //    	fug = false;
 //    }
     }
-    
- 
+
+
 	return fug ;
 }
 
-}
+} 
 
    

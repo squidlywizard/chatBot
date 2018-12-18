@@ -1,38 +1,36 @@
 package chat.controller;
 import javax.swing.JOptionPane;
 
-import chat.model.Chatbot;
-import chat.view.*;
+import chat.model.ChatBot;
+import chat.view.ChatFrame;
 public class ChatController
 {//Data Members
-	private Chatbot simpleBot;
+	private ChatBot simpleBot;
 	private ChatFrame appFrame;
 
-	
+
 	public void start ()
 	{
-		
-		
-		
+
+		this.appFrame = new ChatFrame(this);
+               // System.out.println(simpleBot.processText("test"));
+
+
 	}
 	public String interactWithChatbot(String text) {
-		
-		String output = "";
-		simpleBot = new Chatbot();
-		output += simpleBot.processText(text);
-		
-		return output;
+		simpleBot = new ChatBot();
+		String chatBotSays = simpleBot.processText(text);
+		return chatBotSays;
 	}
 	public ChatController()
-	{
-		
-		this.appFrame = new ChatFrame(this);
-		
+	{       
+
+
 	}
 //	public Boolean useChatbotCheckers(){
 //		return true;
 //	}
-	
+
 	public String useChatbotCheckers(String chatCheckers)
 	{  
 		String var = "fug";
@@ -40,8 +38,8 @@ public class ChatController
 		{
 			var += "Halloween";
 		}
-			
-		
+
+
 		return var;
 	}
 	public String getChatbot() {
@@ -50,7 +48,7 @@ public class ChatController
 	public ChatFrame getChatFrame()
 	{
 		return appFrame;
-		
+
 	}
 
 }

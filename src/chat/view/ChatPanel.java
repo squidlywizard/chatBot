@@ -3,14 +3,15 @@ package chat.view;
 import java.awt.Color;
 import java.awt.Dimension;
 
-import javax.swing.*;
-import chat.controller.*;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class ChatPanel extends JPanel
+import javax.swing.*;
+import chat.controller.ChatController;
+import java.awt.event.*;
+
+public class ChatPanel extends JPanel implements ActionListener
 {
-	private ChatController appController;
+	private ChatController appy;
 	private JButton chatButton;
 	private JButton checkerButton;
 	private JButton loadButton;
@@ -19,43 +20,45 @@ public class ChatPanel extends JPanel
 	private SpringLayout layout;
 	private JTextField chatField;
 	private JTextArea chatArea;
-	
+
 public ChatPanel(ChatController appController) {
 	super();
-	
+
 	chatButton = new JButton("Chat");
 	saveButton = new JButton("Save");
 	checkerButton = new JButton("Check Text");
-	chatArea = new JTextArea("Chat Area",20, 50);
+	chatArea = new JTextArea("",20, 50);
 	chatField = new JTextField("Talk to the bot here", 50);
 	loadButton = new JButton("Load");
 	chatPane = new JScrollPane();
 	layout = new SpringLayout();
-	
-	
-	
-	
-	
+
+
+
+
+
+
 	setLayout(layout);
-	
+
 	setupScrollPane();
 	setupPanel();
 	setupLayout();	
 	setupListeners();
-	
+
+
 }
 public void setupScrollPane()
 {
 	chatArea.setEditable(false);
 	chatArea.setLineWrap(true);
 	chatArea.setWrapStyleWord(true);
-	
+
 	chatPane.setViewportView(chatArea);
 	chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 	chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 
-	
-	
+
+
 }
 public void setupPanel()
 {
@@ -63,22 +66,22 @@ public void setupPanel()
 	this.setPreferredSize(new Dimension(800,600));
 	this.setBackground(Color.pink);
 	this.add(chatButton);
-	
+
 	this.add(saveButton);
 	this.add(checkerButton);
-	
+
 	this.add(chatField);
 	//this.add(chatArea);
-	
+
 	this.add(chatPane);
 	this.add(loadButton);
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 }
 public void setupLayout() 
 { layout.putConstraint(SpringLayout.NORTH, chatField, 25, SpringLayout.SOUTH, chatArea);
@@ -107,21 +110,30 @@ public void setupLayout()
 	layout.putConstraint(SpringLayout.WEST, chatField, 50, SpringLayout.WEST, this);
 	layout.putConstraint(SpringLayout.EAST, chatField, -50, SpringLayout.EAST, this);
 }
+public void actionPerformed(ActionEvent mouseEvent)
+{
+    Object whatsUsed = mouseEvent.getSource();
+    appy = new ChatController();
+    if (whatsUsed == chatButton)
+    {      
+
+      chatArea.insert(appy.interactWithChatbot(chatField.getText()) , 0);
+
+    } else if (whatsUsed == chatField)
+    {
+
+        chatArea.insert(appy.interactWithChatbot(chatField.getText()), 0);
+    }
+}
 public void setupListeners()
 {
-	chatButton.addActionListener(new ActionListener()
-			{
-		public void actionPerformed(ActionEvent mouseClick)
-		{
-			appController = new ChatController();
-			String userText = chatField.getText();
-			String response = "";
-			response = appController.interactWithChatbot(userText);
-			chatArea.append(response);
-            chatArea.setCaretPosition(chatArea.getDocument().getLength());
-            chatField.setText("");
-			
-		}
-			});
+
+    chatButton.addActionListener(this);
+    chatField.addActionListener(this);
+
+
+
+
 }
+
 }
