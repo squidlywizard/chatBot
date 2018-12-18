@@ -18,13 +18,14 @@ public class ChatController
 	public String interactWithChatbot(String text) {
 		
 		String output = "";
+		simpleBot = new Chatbot();
 		output += simpleBot.processText(text);
 		
 		return output;
 	}
 	public ChatController()
 	{
-		simpleBot = new Chatbot(null);
+		
 		this.appFrame = new ChatFrame(this);
 		
 	}

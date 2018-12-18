@@ -113,6 +113,7 @@ public void setupListeners()
 			{
 		public void actionPerformed(ActionEvent mouseClick)
 		{
+			appController = new ChatController();
 			String userText = chatField.getText();
 			String response = "";
 			response = appController.interactWithChatbot(userText);

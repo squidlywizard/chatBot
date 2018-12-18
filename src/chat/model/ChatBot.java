@@ -78,12 +78,13 @@ public class Chatbot
 	   this.responseList = new ArrayList<String>();
 	   this.spookyList = new ArrayList<String>();
 	   
-	   
 	   buildTheLists();
+	   
    }
    public Chatbot(String sampleContent)
 {
 	this.content = new String("sample content");
+	
 }
 
    private void buildTheLists()
@@ -153,6 +154,7 @@ public class Chatbot
    }
    public String processText(String userText )
    { String output = "";
+   
    if (!validityChecker(userText))
    {
 	   output += "you are mean and this is null";
@@ -249,7 +251,7 @@ public boolean contentChecker(String userinput)
 //    }
     }
     
-   
+ 
 	return fug ;
 }
 
