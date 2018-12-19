@@ -22,6 +22,10 @@ public class ChatController
 		String chatBotSays = simpleBot.processText(text);
 		return chatBotSays;
 	}
+	public void handleErrors(Exception error)
+	{
+		JOptionPane.showMessageDialog(appFrame, error.getMessage());
+	}
 	public ChatController()
 	{       
 

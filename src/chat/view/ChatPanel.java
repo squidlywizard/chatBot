@@ -20,6 +20,7 @@ public class ChatPanel extends JPanel implements ActionListener
 	private SpringLayout layout;
 	private JTextField chatField;
 	private JTextArea chatArea;
+	private JButton mannyTheRedundantButton;
 
 public ChatPanel(ChatController appController) {
 	super();
@@ -32,6 +33,7 @@ public ChatPanel(ChatController appController) {
 	loadButton = new JButton("Load");
 	chatPane = new JScrollPane();
 	layout = new SpringLayout();
+	mannyTheRedundantButton = new JButton();
 
 
 
@@ -75,6 +77,7 @@ public void setupPanel()
 
 	this.add(chatPane);
 	this.add(loadButton);
+	this.add(mannyTheRedundantButton);
 
 
 
