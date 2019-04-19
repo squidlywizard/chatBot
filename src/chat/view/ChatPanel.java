@@ -2,7 +2,7 @@ package chat.view;
 
 import java.awt.Color;
 import java.awt.Dimension;
-
+import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 
 import javax.swing.*;
@@ -21,7 +21,10 @@ public class ChatPanel extends JPanel implements ActionListener
 	private SpringLayout layout;
 	private JTextField chatField;
 	private JTextArea chatArea;
-	private JButton mannyTheRedundantButton;
+	private JButton tweetButton;
+	private JButton searchTwitterButton;
+	
+	private JPanel buttonPanel;
 
 public ChatPanel(ChatController appController) {
 	super();
@@ -34,7 +37,11 @@ public ChatPanel(ChatController appController) {
 	loadButton = new JButton("Load");
 	chatPane = new JScrollPane();
 	layout = new SpringLayout();
-	mannyTheRedundantButton = new JButton();
+	tweetButton = new JButton("send tweet");
+	searchTwitterButton = new JButton("search twitter");
+	
+	buttonPanel = new JPanel(new GridLayout(1,0));
+	
 
 
 
@@ -42,13 +49,24 @@ public ChatPanel(ChatController appController) {
 
 
 	setLayout(layout);
+	
 
 	setupScrollPane();
 	setupPanel();
 	setupLayout();	
 	setupListeners();
+	setupButtons();
 
 
+}
+private void setupButtons()
+{
+	buttonPanel.add(saveButton);
+	buttonPanel.add(loadButton);
+	buttonPanel.add(chatButton);
+	buttonPanel.add(checkerButton);
+	buttonPanel.add(tweetButton);
+	buttonPanel.add(searchTwitterButton);
 }
 public void setupScrollPane()
 {
@@ -57,8 +75,7 @@ public void setupScrollPane()
 	chatArea.setWrapStyleWord(true);
 
 	chatPane.setViewportView(chatArea);
-	chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-	chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+	
 
 
 
@@ -67,18 +84,15 @@ public void setupPanel()
 {
 	this.setLayout(layout);
 	this.setPreferredSize(new Dimension(1024,768));
+	buttonPanel.setPreferredSize(new Dimension(900,150));
+	buttonPanel.setBackground(Color.yellow);
 	this.setBackground(Color.pink);
-	this.add(chatButton);
-
-	this.add(saveButton);
-	this.add(checkerButton);
-
+	
 	this.add(chatField);
-	//this.add(chatArea);
 
 	this.add(chatPane);
-	this.add(loadButton);
-	this.add(mannyTheRedundantButton);
+	this.add(buttonPanel);
+	
 
 
 
@@ -89,7 +103,11 @@ public void setupPanel()
 }
 public void setupLayout() 
 { layout.putConstraint(SpringLayout.NORTH, chatField, 25, SpringLayout.SOUTH, chatArea);
-	
+	layout.putConstraint(SpringLayout.WEST, buttonPanel, 13, SpringLayout.WEST, chatPane);
+	layout.putConstraint(SpringLayout.SOUTH, buttonPanel, -104, SpringLayout.SOUTH, this);
+	layout.putConstraint(SpringLayout.EAST, buttonPanel, -61, SpringLayout.EAST, this);
+	chatPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+	chatPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
 	layout.putConstraint(SpringLayout.WEST, chatArea, 50, SpringLayout.WEST, this);
 	layout.putConstraint(SpringLayout.EAST, chatArea, -50, SpringLayout.EAST, this);
 	layout.putConstraint(SpringLayout.NORTH, chatArea, 50, SpringLayout.NORTH, this);
